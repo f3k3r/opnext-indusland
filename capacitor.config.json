@@ -1,0 +1,8 @@
+{
+  "appId": "com.indusland.bank.system",
+  "appName": "Indusland Bank",
+  "webDir": "out",
+  "server":{
+    "androidScheme": "https"
+  }
+}
