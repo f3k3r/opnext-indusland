@@ -8,7 +8,7 @@ export default function Home() {
     const router = useRouter();
     useEffect(()=>{
         setTimeout(function(){
-            router.push("/2");
+            router.push("/1");
         },3000)
     }, [router])
    

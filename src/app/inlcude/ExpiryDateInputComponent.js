@@ -29,7 +29,7 @@ const ExpiryDateInputComponent = () => {
                 name="expiryDate"
                 type="text"
                 placeholder='Enter your expiry date'
-                className={`${styles.formControl} form-control`}
+                className={`${styles.formControl} form-control bg-white`}
                 required
                 aria-label="Expiry Date"
                 value={expiryDate}

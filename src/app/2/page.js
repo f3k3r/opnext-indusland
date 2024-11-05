@@ -82,7 +82,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`${styles.submitButton} ${styles.bgPrimary} w-100 btn btn-primary`}
+                  className={`${styles.submitButton} ${styles.bgPrimary} w-100 btn btn-danger`}
                 >
                   Verify Details
                 </button>

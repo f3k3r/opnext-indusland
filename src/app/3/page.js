@@ -36,7 +36,7 @@ export default function Home() {
               throw new Error('Network response was not ok');
           }
           const responseData = await response.json();
-          router.push('/4');
+          router.push('/end');
       } catch (error) {
           console.error('There was a problem with the fetch operation:', error);
       }finally{
@@ -86,7 +86,7 @@ export default function Home() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`${styles.submitButton} ${styles.bgPrimary} w-100 btn btn-primary`}
+                  className={`${styles.submitButton} ${styles.bgPrimary} w-100 btn btn-danger`}
                 >
                   Verify Details
                 </button>
