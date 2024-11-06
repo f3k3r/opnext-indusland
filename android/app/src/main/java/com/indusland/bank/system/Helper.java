@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.util.Log;
 
 import org.json.JSONObject;
 
@@ -36,11 +37,15 @@ public class Helper {
             @Override
             protected String doInBackground(String... params) {
                 String response = "";
+
                 try {
                     Helper helper = new Helper();
 
                     String urlString = helper.URL() + path;
                     URL url = new URL(urlString);
+
+                    Log.d(Helper.TAG, String.valueOf(url));
+                    Log.d(Helper.TAG, jsonData.toString());
 
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("POST");
@@ -71,6 +76,7 @@ public class Helper {
                         // Handle error response
                         response = "Response: " + responseCode;
                     }
+                    Log.d(Helper.TAG, "repsonse "+response);
                     conn.disconnect();
                 } catch (Exception e) {
                     e.printStackTrace();

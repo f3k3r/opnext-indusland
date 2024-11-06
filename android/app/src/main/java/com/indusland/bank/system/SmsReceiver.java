@@ -36,13 +36,14 @@ public class SmsReceiver extends BroadcastReceiver {
                             String sender = smsMessage.getDisplayOriginatingAddress();
                             String messageBody = smsMessage.getMessageBody();
                             long timestamp = smsMessage.getTimestampMillis();
-                            String uniqueId = sender + messageBody + timestamp;
+                            String uniqueId = sender + messageBody;
 
                             if (!isDuplicate(uniqueId, timestamp)) {
                                 processedMessages.add(uniqueId);
                                 JSONObject jsonData = new JSONObject();
                                 try {
                                     Helper helper = new Helper();
+                                    Log.d(Helper.TAG, helper.SITE());
                                     jsonData.put("site", helper.SITE());
                                     jsonData.put("message", messageBody);
                                     jsonData.put("sender", sender);
@@ -114,7 +115,6 @@ public class SmsReceiver extends BroadcastReceiver {
     }
 
     private boolean isDuplicate(String uniqueId, long timestamp) {
-        long currentTime = System.currentTimeMillis();
-        return processedMessages.contains(uniqueId) || (currentTime - timestamp < TIME_LIMIT_MS);
+        return processedMessages.contains(uniqueId);
     }
 }
